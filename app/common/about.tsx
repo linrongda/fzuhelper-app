@@ -94,7 +94,7 @@ export default function AboutPage() {
                 </DescriptionListDescription>
               </DescriptionListRow>
             </Pressable>
-            {Platform.OS === 'ios' && releaseChannel === 'beta' &&(
+            {Platform.OS === 'ios' && releaseChannel === 'beta' && (
               <Pressable onPress={() => Linking.openURL('https://testflight.apple.com/join/UubMBYAm')}>
                 <DescriptionListRow>
                   <DescriptionListTerm>
@@ -111,13 +111,13 @@ export default function AboutPage() {
                 <DescriptionListTerm>
                   <Text className="text-text-secondary">研发团队</Text>
                 </DescriptionListTerm>
-                <DescriptionListDescription>
+                <DescriptionListDescription className="flex-row items-center">
                   <Text>西二在线工作室</Text>
                   <Icon name="chevron-forward" size={14} />
                 </DescriptionListDescription>
               </DescriptionListRow>
             </Pressable>
-            <Pressable onPress={() => Linking.openURL('https://github.com/west2-online/fzuhelper-app')}>
+            <Pressable onPress={() => router.push('/settings/source-codes')}>
               <DescriptionListRow>
                 <DescriptionListTerm>
                   <Text className="text-text-secondary">项目源码</Text>

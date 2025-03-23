@@ -1,4 +1,4 @@
-package com.helper.west2ol.fzuhelper
+package com.helper.west2ol.fzuhelper.lrd
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -19,8 +19,8 @@ open class CourseScheduleWidgetProvider : AppWidgetProvider() {
             val views = RemoteViews(context.packageName, R.layout.course_schedule_widget_provider)
             val intent = Intent()
             intent.setClassName(
-                "com.helper.west2ol.fzuhelper",
-                "com.helper.west2ol.fzuhelper" + ".MainActivity"
+                "com.helper.west2ol.fzuhelper.lrd",
+                "com.helper.west2ol.fzuhelper.lrd" + ".MainActivity"
             )
             val pendingIntent = PendingIntent.getActivity(
                 context,

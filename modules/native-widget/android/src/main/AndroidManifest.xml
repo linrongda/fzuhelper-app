@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.west2online.nativewidget">
+        xmlns:tools="http://schemas.android.com/tools">
 
         <application>
-            <activity android:name="com.helper.west2ol.fzuhelper.NextClassWidgetConfigureActivity"
+            <activity android:name="com.helper.west2ol.fzuhelper.lrd.NextClassWidgetConfigureActivity"
                 android:exported="true">
                 <intent-filter>
                     <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
@@ -10,9 +10,10 @@
             </activity>
 
             <receiver
-                android:name="com.helper.west2ol.fzuhelper.NextClassWidgetProvider"
+                android:name="com.helper.west2ol.fzuhelper.lrd.NextClassWidgetProvider"
                 android:exported="true"
-                android:label="@string/next_class_widget_description">
+                android:label="@string/next_class_widget_description"
+                tools:replace="android:exported">
                 <intent-filter>
                     <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 </intent-filter>
@@ -25,9 +26,10 @@
                     android:resource="@xml/next_class_widget_provider" />
             </receiver>
             <receiver
-                android:name="com.helper.west2ol.fzuhelper.CourseScheduleWidgetProvider"
+                android:name="com.helper.west2ol.fzuhelper.lrd.CourseScheduleWidgetProvider"
                 android:exported="true"
-                android:label="@string/course_schedule_widget_description">
+                android:label="@string/course_schedule_widget_description"
+                tools:replace="android:exported">
                 <intent-filter>
                     <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 </intent-filter>
@@ -38,7 +40,7 @@
             </receiver>
 
             <service
-                android:name="com.helper.west2ol.fzuhelper.CourseScheduleWidgetService"
+                android:name="com.helper.west2ol.fzuhelper.lrd.CourseScheduleWidgetService"
                 android:exported="false"
                 android:permission="android.permission.BIND_REMOTEVIEWS" />
 

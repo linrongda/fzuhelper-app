@@ -1,4 +1,4 @@
-package com.helper.west2ol.fzuhelper
+package com.helper.west2ol.fzuhelper.lrd
 
 import android.content.Context
 import android.content.Intent
@@ -11,8 +11,8 @@ import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
-import com.helper.west2ol.fzuhelper.CacheCourseData
-import com.helper.west2ol.fzuhelper.getWeeks
+import com.helper.west2ol.fzuhelper.lrd.CacheCourseData
+import com.helper.west2ol.fzuhelper.lrd.getWeeks
 import com.west2online.nativewidget.R
 
 class CourseScheduleWidgetService : RemoteViewsService() {

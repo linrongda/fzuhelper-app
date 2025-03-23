@@ -1,4 +1,4 @@
-package com.helper.west2ol.fzuhelper
+package com.helper.west2ol.fzuhelper.lrd
 
 import androidx.annotation.Keep
 import android.content.Context

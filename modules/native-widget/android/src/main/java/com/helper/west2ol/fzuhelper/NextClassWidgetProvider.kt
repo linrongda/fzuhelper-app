@@ -1,4 +1,4 @@
-package com.helper.west2ol.fzuhelper
+package com.helper.west2ol.fzuhelper.lrd
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -61,8 +61,8 @@ internal fun updateNextClassWidget(
 
     val intent = Intent()
     intent.setClassName(
-        "com.helper.west2ol.fzuhelper",
-        "com.helper.west2ol.fzuhelper" + ".MainActivity"
+        "com.helper.west2ol.fzuhelper.lrd",
+        "com.helper.west2ol.fzuhelper.lrd" + ".MainActivity"
     )
     val pendingIntent = PendingIntent.getActivity(
         context,

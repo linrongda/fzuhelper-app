@@ -52,7 +52,7 @@ const config: ExpoConfig = {
     'zh-Hant': './locales/chinese-traditional.json',
   },
   android: {
-    package: IS_DEV ? 'com.helper.west2ol.fzuhelper.dev' : 'com.helper.west2ol.fzuhelper',
+    package: IS_DEV ? 'com.helper.west2ol.fzuhelper.dev' : 'com.helper.west2ol.fzuhelper.lrd',
     versionCode: 700001, // 此处不需要修改，将在inject-android-config中自增
     adaptiveIcon: {
       foregroundImage: './assets/images/ic_launcher_foreground.png',

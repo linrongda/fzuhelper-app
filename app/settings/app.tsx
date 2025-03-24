@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import { CommonSettingsManager } from '@/lib/common-settings';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { QueryCache } from '@tanstack/react-query';
 import { Link, Stack } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Linking, Modal, Platform, Pressable, TouchableOpacity, View, useColorScheme } from 'react-native';
@@ -12,6 +13,7 @@ import LabelEntry from '@/components/label-entry';
 import PageContainer from '@/components/page-container';
 import { Text } from '@/components/ui/text';
 
+import { clearAllCache } from '@/hooks/usePersistedQuery';
 import { useRedirectWithoutHistory } from '@/hooks/useRedirectWithoutHistory';
 import { hasCustomBackground } from '@/lib/appearance';
 import { RELEASE_CHANNEL_KEY } from '@/lib/constants';
@@ -124,6 +126,7 @@ export default function AcademicPage() {
           await CourseCache.clear(); // 清除课程缓存
           await LocalUser.clear(); // 清除本地用户
           await AsyncStorage.clear(); // 清空 AsyncStorage
+          clearAllCache(); // 清除所有缓存
           toast.success('清除完成，请重新登录');
           setTimeout(() => {
             redirect('/(guest)');
@@ -147,6 +150,7 @@ export default function AcademicPage() {
             await CourseCache.clear();
             await LocalUser.clear();
             await AsyncStorage.clear(); // 清空 AsyncStorage
+            clearAllCache(); // 清除所有缓存
             redirect('/(guest)');
           } catch (error) {
             console.error('Error clearing storage:', error);

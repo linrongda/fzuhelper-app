@@ -9,7 +9,6 @@ import { getApiV1JwchPing } from '@/api/generate';
 import RedDot from '@/components/ui/red-dot';
 import { useSafeResponseSolve } from '@/hooks/useSafeResponseSolve';
 import { RELEASE_UPDATE_KEY } from '@/lib/constants';
-import { checkAndroidUpdate, showAndroidUpdateRedDot } from '@/utils/android-update';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const NAVIGATION_TITLE = '首页';
@@ -60,17 +59,6 @@ export default function TabLayout() {
       subscription.remove();
     };
   });
-
-  useEffect(() => {
-    // 安卓检查更新
-    if (Platform.OS === 'android') {
-      checkAndroidUpdate(handleError, {
-        onUpdate: data => {
-          showAndroidUpdateRedDot(true);
-        },
-      });
-    }
-  }, [handleError]);
 
   useFocusEffect(
     useCallback(() => {

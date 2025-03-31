@@ -3,7 +3,7 @@ name: Build And Publish APK
 on:
   push:
     branches:
-      - reddot
+      - ci
   workflow_dispatch:
 
 concurrency:
@@ -27,6 +27,8 @@ jobs:
           path: |
             ~/.gradle
             ${{ github.workspace }}/node_modules
+            ${{ github.workspace }}/android/app/build
+            ${{ github.workspace }}/android/.gradle
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-

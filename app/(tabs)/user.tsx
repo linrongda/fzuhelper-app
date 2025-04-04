@@ -1,5 +1,6 @@
-import { Href, router, Tabs } from 'expo-router';
-import { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Href, router, Tabs, useFocusEffect } from 'expo-router';
+import { useCallback, useEffect, useState } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
 
 import { Icon } from '@/components/Icon';

@@ -2,13 +2,18 @@
         xmlns:tools="http://schemas.android.com/tools">
 
         <application>
-            <activity android:name="com.helper.west2ol.fzuhelper.lrd.NextClassWidgetConfigureActivity"
+            <activity android:name="com.helper.west2ol.fzuhelper.lrd.NextClassWidgetConfigurationActivity"
                 android:exported="true">
                 <intent-filter>
                     <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
                 </intent-filter>
             </activity>
-
+            <activity android:name="com.helper.west2ol.fzuhelper.CourseScheduleWidgetConfigurationActivity"
+                android:exported="true">
+                <intent-filter>
+                    <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+                </intent-filter>
+            </activity>
             <receiver
                 android:name="com.helper.west2ol.fzuhelper.lrd.NextClassWidgetProvider"
                 android:exported="true"

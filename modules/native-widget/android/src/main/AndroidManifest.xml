@@ -8,7 +8,7 @@
                     <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
                 </intent-filter>
             </activity>
-            <activity android:name="com.helper.west2ol.fzuhelper.CourseScheduleWidgetConfigurationActivity"
+            <activity android:name="com.helper.west2ol.fzuhelper.lrd.CourseScheduleWidgetConfigurationActivity"
                 android:exported="true">
                 <intent-filter>
                     <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>

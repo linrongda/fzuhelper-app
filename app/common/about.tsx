@@ -2,6 +2,7 @@ import Constants from 'expo-constants';
 import { Href, Link, Stack, router, useFocusEffect } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { Image, Linking, Platform, Pressable, View } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { toast } from 'sonner-native';
 
@@ -30,6 +31,7 @@ export default function AboutPage() {
   const { handleError } = useSafeResponseSolve();
   const [updateCheckState, setUpdateCheckState] = useState('点击检查更新');
   const [releaseUpdate, setReleaseUpdate] = useState<string>('false');
+  const buildNumber = DeviceInfo.getBuildNumber();
 
   const handleCheckUpdate = useCallback(async () => {
     console.log('check update');
@@ -85,7 +87,9 @@ export default function AboutPage() {
         <Pressable className="flex items-center p-12" onPress={() => setClickCount(prev => prev + 1)}>
           <Image source={IconTransparent} className="mb-6 h-20 w-20 rounded-full bg-card" />
           <View>
-            <Text className="text-xl text-primary">{Constants.expoConfig?.version ?? ''}</Text>
+            <Text className="text-xl text-primary">
+              {Constants.expoConfig?.version ?? ''}.{buildNumber ?? ''}
+            </Text>
           </View>
         </Pressable>
 

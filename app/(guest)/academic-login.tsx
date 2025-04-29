@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack } from 'expo-router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Alert, Image, Linking, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
@@ -10,12 +9,12 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Text } from '@/components/ui/text';
 
-import { getApiV1JwchUserInfo, getApiV1LoginAccessToken } from '@/api/generate';
+import { getApiV1LoginAccessToken } from '@/api/generate';
 import PageContainer from '@/components/page-container';
 import { useRedirectWithoutHistory } from '@/hooks/useRedirectWithoutHistory';
 import { useSafeResponseSolve } from '@/hooks/useSafeResponseSolve';
 import { setAegisConfig } from '@/lib/aegis';
-import { JWCH_USER_INFO_KEY, URL_PRIVACY_POLICY, URL_USER_AGREEMENT } from '@/lib/constants';
+import { URL_PRIVACY_POLICY, URL_USER_AGREEMENT } from '@/lib/constants';
 import { LocalUser, USER_TYPE_POSTGRADUATE, USER_TYPE_UNDERGRADUATE } from '@/lib/user';
 import UserLogin from '@/lib/user-login';
 import { pushToWebViewNormal } from '@/lib/webview';
@@ -118,13 +117,6 @@ const LoginPage: React.FC = () => {
 
       // 通过提供 id和 cookies 获取访问令牌
       await getApiV1LoginAccessToken();
-
-      if (!isPostGraduate) {
-        // 获取个人信息
-        const result = await getApiV1JwchUserInfo();
-        // 存储个人信息到本地
-        AsyncStorage.setItem(JWCH_USER_INFO_KEY, JSON.stringify(result.data.data));
-      }
 
       // 跳转到首页
       redirect('/(tabs)');

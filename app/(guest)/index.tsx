@@ -56,7 +56,7 @@ export default function SplashScreen() {
 
   // 合规初始化第三方库
   const initThirdParty = useCallback(async () => {
-    console.log('initUMPush and UMAnalysis');
+    console.log('init ThirdParty Libraries');
     await NotificationManager.init();
     initAegis();
   }, []);
@@ -120,8 +120,7 @@ export default function SplashScreen() {
         [SPLASH_DISPLAY_COUNT, (displayCount + 1).toString()],
         [SPLASH_DATE, new Date().toDateString()],
       ]);
-    } catch (error: any) {
-      console.error(error);
+    } catch {
       // 不使用 handleError，静默处理
       navigateToHome();
     }

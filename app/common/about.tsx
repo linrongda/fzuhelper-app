@@ -112,7 +112,7 @@ export default function AboutPage() {
                   <Text className="text-text-secondary">研发团队</Text>
                 </DescriptionListTerm>
                 <DescriptionListDescription className="flex-row items-center">
-                  <Text>西二在线工作室</Text>
+                  <Text>西二在线工作室 </Text>
                   <Icon name="chevron-forward" size={14} />
                 </DescriptionListDescription>
               </DescriptionListRow>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   <Text className="text-text-secondary">项目源代码</Text>
                 </DescriptionListTerm>
                 <DescriptionListDescription className="flex-row items-center">
-                  <Text>点击查看</Text>
+                  <Text>点击查看 </Text>
                   <Icon name="chevron-forward" size={14} />
                 </DescriptionListDescription>
               </DescriptionListRow>

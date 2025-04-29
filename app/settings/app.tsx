@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import { CommonSettingsManager } from '@/lib/common-settings';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { QueryCache } from '@tanstack/react-query';
 import { Link, Stack } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Linking, Modal, Platform, Pressable, TouchableOpacity, View, useColorScheme } from 'react-native';
@@ -239,7 +238,7 @@ export default function AcademicPage() {
       <Stack.Screen options={{ title: '设置' }} />
 
       <PageContainer>
-        <ScrollView className="flex-1 px-8 pt-8">
+        <ScrollView className="flex-1 px-8" contentContainerClassName="pt-8">
           <SafeAreaView edges={['bottom']}>
             {/* 菜单列表 */}
             <Text className="mb-2 text-sm text-text-secondary">基本</Text>

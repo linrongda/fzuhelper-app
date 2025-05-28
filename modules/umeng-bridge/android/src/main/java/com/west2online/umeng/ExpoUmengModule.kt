@@ -90,7 +90,7 @@ class ExpoUmengModule : Module() {
                 val notificationClickHandler: UmengNotificationClickHandler =
                     object : UmengNotificationClickHandler() {
                         override fun launchApp(context: Context, msg: UMessage) {
-                            val newMsg = msg.extra;
+                            val newMsg = msg.extra
                             Log.i("UMLog", "msg:$newMsg")
                         }
                     }
@@ -103,7 +103,6 @@ class ExpoUmengModule : Module() {
                     false
                 )
                 HuaWeiRegister.register(context)
-
                 initialized = true
             }
         }

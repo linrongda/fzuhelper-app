@@ -55,13 +55,6 @@ const DEFAULT_TOOLS: Tool[] = [
     href: '/toolbox/academic',
   },
   {
-    name: '教务通知',
-    icon: NotificationIcon,
-    type: ToolType.LINK,
-    href: '/toolbox/office-notice',
-    userTypes: [USER_TYPE_UNDERGRADUATE],
-  },
-  {
     name: '历年卷',
     icon: FileIcon,
     type: ToolType.LINK,
@@ -125,6 +118,13 @@ const DEFAULT_TOOLS: Tool[] = [
       title: '嘉锡讲坛',
       jwch: true,
     },
+    userTypes: [USER_TYPE_UNDERGRADUATE],
+  },
+    {
+    name: '教务通知',
+    icon: NotificationIcon,
+    type: ToolType.LINK,
+    href: '/toolbox/office-notice',
     userTypes: [USER_TYPE_UNDERGRADUATE],
   },
   {

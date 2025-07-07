@@ -1,5 +1,5 @@
 import { fromByteArray } from 'base64-js';
-import { Tabs } from 'expo-router';
+import { Tabs, useFocusEffect } from 'expo-router';
 import { RotateCwIcon } from 'lucide-react-native';
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Dimensions, FlatList, Image, RefreshControl, TouchableOpacity, View } from 'react-native';
@@ -191,9 +191,11 @@ function TabContent({ tabname, onekey, recaptcha, refreshCaptcha }: TabContentPr
     refreshCourses();
   }, [courses, onekey, recaptchaInput, refreshCaptcha, refreshCourses]);
 
-  useEffect(() => {
-    refreshCourses();
-  }, [refreshCourses]);
+  useFocusEffect(
+    useCallback(() => {
+      refreshCourses();
+    }, [refreshCourses]),
+  );
 
   if (isLoading) {
     return (

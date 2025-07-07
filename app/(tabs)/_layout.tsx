@@ -12,9 +12,6 @@ import RedDot from '@/components/ui/red-dot';
 import { useSafeResponseSolve } from '@/hooks/useSafeResponseSolve';
 import { RELEASE_UPDATE_KEY } from '@/lib/constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// 用于修复 hermes 的 TypedArray 错误
-// eslint-disable-next-line prettier/prettier
-import '@exodus/patch-broken-hermes-typed-arrays'
 
 const NAVIGATION_TITLE = '首页';
 

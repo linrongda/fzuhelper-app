@@ -51,10 +51,8 @@ const config: ExpoConfig = {
     },
   },
   locales: {
-    ja: './locales/japanese.json',
     en: './locales/english.json',
     'zh-Hans': './locales/chinese.json',
-    'zh-Hant': './locales/chinese-traditional.json',
   },
   android: {
     package: IS_DEV ? 'com.helper.west2ol.fzuhelper.dev' : 'com.helper.west2ol.fzuhelper.lrd',
@@ -86,6 +84,8 @@ const config: ExpoConfig = {
         android: {
           useLegacyPackaging: true,
           enableProguardInReleaseBuilds: true,
+          enableShrinkResourcesInReleaseBuilds: true,
+          enableDangerousExperimentalLeanBuilds: true,
           usesCleartextTraffic: true,
           extraMavenRepos: ['https://developer.huawei.com/repo/'],
         },

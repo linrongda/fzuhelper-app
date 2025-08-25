@@ -8,7 +8,6 @@ const builder = new xml2js.Builder({ headless: true });
 const map = new Map([
   ['en', ''],
   ['zh-Hans', '-zh-rCN'],
-  ['zh-Hant', '-zh-rTW'],
 ]);
 
 function withAndroidLocalization(config) {
